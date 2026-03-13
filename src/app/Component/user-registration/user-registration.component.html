@@ -1,0 +1,127 @@
+             <!-- not use this model  -->
+<!-- The Modal -->
+<!-- <div class="modal" id="myModal" #myModal>  #myModa used in Viewchield -->
+  <!-- <div class="modal fade" id="myModal" #myModal tabindex="-1">
+
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+    
+      <div class="modal-header" style="background-color: beige;"> 
+        <h4 class="modal-title">Registered here</h4>
+        <button type="button" (click)="closeUserRegistrationModal()" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+   <form [formGroup]="userRegistrationForm">
+  
+      <div class="modal-body background-color: beige;">
+       
+         <div class="row mt-3">
+          <div class="col-6">
+           <input type="text" formControlName="name" name="name" class="form-control" placeholder=" name">
+          </div>
+          <div class="col-6">
+            <input type="text" formControlName="userName" name="username" class="form-control" placeholder="user Name">
+          </div>
+         </div>
+          <div class="row mt-3">
+          <div class="col-6">
+            <input type="email" formControlName="email" name="email" class="form-control" placeholder="email">
+          </div>
+          <div class="col-6">
+            <input type="password" formControlName="password" name="password" class="form-control" placeholder="password">
+          </div>
+         </div>
+          <div class="row mt-3">
+          <div class="col-6">
+            <input type="text" formControlName="mobile" name="mobile" class="form-control" placeholder="mobile">
+          </div>
+          <div class="col-6">
+            <input type="text" formControlName="aadhar" name="aadhar" class="form-control" placeholder="aadhar">
+          </div>
+         </div>
+             </div>
+      <div class="modal-footer">
+      <button type="submit"  class="btn btn-blue w-25" >Save</button>
+        <button type="button" (click)="closeUserRegistrationModal()" class="btn btn-blue w-25" data-bs-dismiss="modal">Close</button>
+      </div>
+</form>
+    </div>
+  </div>
+</div> -->
+
+          <!-- The Modal  end  -->
+                             <!-- new register page click on register link -->
+
+                              
+ <div class="login">
+  <div class="container">
+    <div class="card border-0">
+      <div class="text-center mb-3 mb-md-4">
+        <h1 class="mb-lg-3">REGISTERED HERE</h1>
+        <h5>Welcome ! Please register your account.</h5>
+      </div>
+      
+
+      <!-- Tab panes -->
+      <div class="tab-content">
+        <div class="tab-pane active" id="usernameTab">
+         <form [formGroup]="userRegistrationForm" (ngSubmit)="userRegistrationonsubmit()"> 
+            <!-- Can't bind to 'formGroup' since it isn't a known property of 'form'. -->
+             <!-- to sove this we import 'ReactiveFormsModule' in ts page  -->
+           
+        <!--1. create form here  steps 1 start -->
+         <div class="row mt-3">
+          <div class="col-6">
+            <!-- we use formcontrolname for onsubmit method to capture value same as model name   step 5  -->
+            <input type="text" formControlName="name" name="name" class="form-control" placeholder=" name">
+          </div>
+          <div class="col-6">
+            <input type="text" formControlName="userName" name="username" class="form-control" placeholder="user Name">
+          </div>
+         </div>
+          <div class="row mt-3">
+          <div class="col-6">
+            <input type="email" formControlName="email" name="email" class="form-control" placeholder="email">
+          </div>
+          <div class="col-6">
+            <input type="password" formControlName="password" name="password" class="form-control" placeholder="password">
+          </div>
+         </div>
+          <div class="row mt-3">
+          <div class="col-6">
+            <input type="text" formControlName="mobile" name="mobile" class="form-control" placeholder="mobile">
+          </div>
+          <div class="col-6">
+            <input type="text" formControlName="aadhar" name="aadhar" class="form-control" placeholder="aadhar">
+          </div>
+         </div>
+          <div class="row mt-3">
+          <div class="col-12">
+            <input type="text" formControlName="course" name="Course" class="form-control" placeholder="Enter your course name">
+          </div>
+          <!-- <div class="col-6">
+            <input type="password" formControlName="password" name="password" class="form-control" placeholder="password">
+          </div> -->
+         </div>
+         <br>
+         
+        
+          <div class="tab-pane">
+         <!-- <button [disabled]="this.UserRegistrationForm.invalid" type="submit"   class="btn btn-primary" data-bs-dismiss="modal">Save</button> -->
+     <!-- <button type="submit"   class="btn btn-primary" >Save</button> -->
+      <button type="submit" [disabled]="this.userRegistrationForm.invalid"   class="btn btn-blue w-25" >Save</button>
+     
+        <button type="button" (click)="closeUserRegistrationModal()" class="btn btn-blue w-25" data-bs-dismiss="modal">Close</button>
+      </div>
+        
+           </form>
+           
+        </div>
+
+                    
+
+        
+      </div>
+    </div>
+  </div>
+</div>

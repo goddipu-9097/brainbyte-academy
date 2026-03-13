@@ -1,0 +1,109 @@
+/*=============================
+	Contact CSS
+===============================*/
+/* map */
+.mb-5 iframe {
+  width: 100%;
+  height: 300px;
+  border: 0;
+}
+
+.contact .contact-bottom{
+	margin-top:30px;
+}
+.contact #map {
+	height: 450px;
+	margin-bottom: 30px;
+	border: 10px solid #f8f8f8;
+}
+.contact .contact-head {
+	overflow: hidden;
+}
+.contact .form-head{
+	margin-top:30px;
+}
+.contact .form-head .form-group {
+	margin-bottom: 20px;
+	position: relative;
+}
+.contact .form-head .form-group i {
+	position: absolute;
+	top: 21px;
+	left: 20px;
+	z-index: 1;
+}
+.contact .form-head .col-12:last-child .form-group{
+	margin:0;
+}
+.contact .form-head .form-group input,
+.contact .form-head .form-group textarea {
+	height: 55px;
+	width: 100%;
+	padding-left: 40px;
+	color: #555;
+	font-size: 15px;
+	background: #f8f8f8;
+	border: none;
+	border-radius: 0px;
+	resize: none;
+}
+.contact .form-head .form-group textarea {
+	height: 190px;
+	padding-left: 40px;
+	padding-top: 18px;
+}
+.contact .form-head .form-group.message i {
+	top: 25px;
+}
+.contact .form-head .form-group button {
+	color: #fff;
+	background:#20232E;
+	-webkit-transition: all 0.3s ease 0s;
+	-moz-transition: all 0.3s ease 0s;
+	transition: all 0.3s ease 0s;
+}
+/* Contact info */
+.contact .contact-info {
+	text-align: left;
+	margin-top: 30px;
+	position: relative;
+}
+.contact .contact-info .icon {
+	left: 0;
+}
+.contact .contact-info .icon i {
+	width: 56px;
+	height: 56px;
+	line-height: 56px;
+	font-size: 14px;
+	border-radius: 100%;
+	text-align: center;
+	color: #fff;
+	border:1px solid transparent;
+	-webkit-transition:all 0.3s ease 0s;
+	-moz-transition:all 0.3s ease 0s;
+	transition:all 0.3s ease 0s;
+}
+.contact .contact-info:hover .icon i{
+	border-color:#ccc;
+	background:transparent;
+}
+.contact .contact-info h3 {
+	font-size: 16px;
+	font-weight: 500;
+	margin: 0 0 5px;
+	margin-top: 10px;
+	text-transform: capitalize;
+}
+.contact .contact-info a {
+	color: #777;
+}
+.contact .contact-info p {
+	color: #555;
+	font-size: 14px;
+	line-height: 22px;
+}
+
+/*=============================
+	End Contact CSS
+===============================*/

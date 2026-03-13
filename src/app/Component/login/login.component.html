@@ -1,0 +1,186 @@
+
+ 
+ <div class="login">
+  <div class="container">
+    <div class="card border-0">
+      <div class="text-center mb-3 mb-md-4">
+        <h1 class="mb-lg-3">LOG IN</h1>
+        <h5>Welcome ! Please login to your account.</h5>
+      </div>
+      <ul class="nav nav-tabs">
+        
+     <li class="nav-item">
+          <a class="nav-link active text-nowrap" (click)="clearusername()"data-bs-toggle="tab" href="#usernameTab">
+       <i class="fa-solid fa-envelope"></i> USERNAME
+    </a>
+     </li>
+     <li class="nav-item">
+        <a class="nav-link" data-bs-toggle="tab" (click)="clearmobile()" href="#otpTab"><i class="fa-solid fa-mobile-screen-button"></i>OTP</a>
+     </li>
+  
+    </ul>
+
+      <!-- Tab panes -->
+      <div class="tab-content">
+        <div class="tab-pane active" id="usernameTab">
+         <form [formGroup]="loginForm"> 
+            <!-- Can't bind to 'formGroup' since it isn't a known property of 'form'. -->
+             <!-- to sove this we import 'ReactiveFormsModule' in ts page  -->
+            <div class="row">
+               <div class="col-sm-12 mb-3"><!--we need to use 'formcontrolname' for bind value in ts page -->
+                  <!-- <span class="inputIcon"> -->
+                    <input type="text" name="username" formControlName="username" class="form-control" placeholder="Enter your User Name or Mobile No">
+               <i class="fa-solid fa-user"></i>
+                  <!-- </span> -->
+              </div>
+              <div class="col-sm-12 mb-3">
+              <span class="inputIcon">
+                <input type="password" name="password" formControlName="password" class="form-control" placeholder="Enter your password">
+            <i class="fa-solid fa-key"></i>  
+            <!-- for use icon we shoud add 'font-awesome' in index.html -->
+              
+              </span>
+              </div>
+<div class="col-sm-6 mb-3 d-flex align-items-center">
+<div class="captcha text-center">
+<canvas id="capCan" height="50px"></canvas>
+
+</div>
+
+                   <div>
+                  
+                  <a href="javascript:void(0)" class="refreshcaptcha"(click)="refreshcaptha()">
+                    <mat-icon class="material-symbols-outlined" fontIcon="autorenew"></mat-icon>
+                    <!-- refresh icon show -->
+                    <!-- when we import MatIconModule then this error solved <mat-icon>-->
+                  </a>
+                </div>
+ </div>
+              <div class="col-sm-6 mb-3">
+<input type="text" name="logincaptcha" formControlName="captcha" class="form-control" placeholder="Enter Captcha">
+
+              </div>
+             
+              <div class="col-sm-12 mb-3">
+                
+                <button type="button" (click)="login()" class="btn btn-blue w-100">
+                  LOG IN
+                </button>
+              </div>
+              <div class="col-sm-12 text-center">
+                <span class="regHere">
+            Don't have an account?
+                
+<!-- <a routerLink="/UserRegistration">Register here</a> -->
+ <div class="btn btn-blue w-100" (click)="openuserregistrationmodal()">Register here</div>
+              </span>
+              </div> 
+            </div>
+        
+           </form>
+           
+        </div>
+
+                     <!-- another tab -->
+                      <div class="tab-pane fade" id="otpTab">
+     <form>
+  <div class="row">
+    <div class="col-sm-12 mb-3">
+      <span class="inputIcon">
+        <input type="text" name="mobile" 
+        class="form-control" placeholder="Enter your mobile">
+              <i class="fa-solid fa-mobile-screen-button"></i>
+      </span>
+
+    </div>
+    <div class="col-sm-12 mb-3">
+                <button
+                  type="button"
+                  (click)="loginByPhone()"
+                
+                  class="btn btn-blue w-100"
+                >
+                  SEND OTP
+                </button>
+              </div>
+                      <div class="col-sm-12 text-center">
+                <span class="regHere"
+                  >Don't have an account?
+               <!-- <a routerLink="/registration">Register here</a>  -->
+                <a [routerLink]="['/user']" [queryParams]="{ openModal: true }">
+  Register here
+</a>
+                </span>
+                
+              </div>
+  </div>
+</form>
+                      </div>
+
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- The Modal -->
+<div class="modal" id="myModal" #myModal>  <!-- #myModa used in Viewchield -->
+ <!-- here # which is used in #myModal worke as a selector -->
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+       <div class="modal-header background-color: beige  " > <!-- bg-info to give same background color like registration which is also use in registrain -->
+        <h4 class="modal-title">Registered here</h4>
+        <button type="button" (click)="closeUserRegistrationModal()" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+                       <!-- step 3 form bind  -->
+ 
+      <!-- under form tag we put form body and form footer -->
+   <form [formGroup]="UserRegistrationForm"(ngSubmit)="userRegistrationonsubmit()">
+           <!-- now create method for onsubit on ts page   step 4 -->
+      <!-- Modal body -->
+      <div class="modal-body background-color: beige;">
+        <!--1. create form here  steps 1 start -->
+         <div class="row mt-3">
+          <div class="col-6">
+            <!-- we use formcontrolname for onsubmit method to capture value same as model name   step 5  -->
+            <input type="text" formControlName="name" name="name" class="form-control" placeholder=" name">
+          </div>
+          <div class="col-6">
+            <input type="text" formControlName="userName" name="username" class="form-control" placeholder="user Name">
+          </div>
+         </div>
+          <div class="row mt-3">
+          <div class="col-6">
+            <input type="email" formControlName="email" name="email" class="form-control" placeholder="email">
+          </div>
+          <div class="col-6">
+            <input type="password" formControlName="password" name="password" class="form-control" placeholder="password">
+          </div>
+         </div>
+          <div class="row mt-3">
+          <div class="col-6">
+            <input type="text" formControlName="mobile" name="mobile" class="form-control" placeholder="mobile">
+          </div>
+          <div class="col-6">
+            <input type="text" formControlName="aadhar" name="aadhar" class="form-control" placeholder="aadhar">
+          </div>
+         </div>
+             </div>
+ <!-- Modal body end .  now step 2 to go typescrypt page (.ts)-->
+      <!-- Modal footer -->
+      <div class="modal-footer">
+         <!-- <button [disabled]="this.UserRegistrationForm.invalid" type="submit"   class="btn btn-primary" data-bs-dismiss="modal">Save</button> -->
+     <!-- <button type="submit"   class="btn btn-primary" >Save</button> -->
+      <button type="submit" [disabled]="this.UserRegistrationForm.invalid"  class="btn btn-blue w-25" >Save</button>
+     
+        <button type="button" (click)="closeUserRegistrationModal()" class="btn btn-blue w-25" data-bs-dismiss="modal">Close</button>
+      </div>
+</form>
+    </div>
+  </div>
+</div>
+
+

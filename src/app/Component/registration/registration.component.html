@@ -1,0 +1,248 @@
+
+<!-- if we want to create class then we only do simple thing
+ we use . before any type of class we want it automatic create
+ like  .container fluid  -->
+<div class="container-fluid">
+
+    <!-- if we want multiple class then  we use every time . before adding class like this  .row.p -->
+     <!-- here p - padding  -->
+     <div class="row p-2 bg-info">
+        <div class="col-6">
+
+            <h3>Student List</h3>
+        </div>
+        <!-- note. here by click event we call modal  -->
+               <!-- and modal all code eriten below seperately -->
+      <div class="col-6 text-end"> <!-- Moadl step-1 -->
+        <div class="btn btn-warning" (click)="openModal()">Add Detail Here</div> <!-- show openModal() error -->
+                                 <!-- for step-2  -->
+        <!-- solve error  we use openModal() as a function and go to our 'type script file' .ts  -->
+     </div>
+     </div>
+
+     <!-- create table  -->
+       <div class="table-responsive"> <!-- this is used for responsive size axact -->
+      <table class="table table-bordered table-striped">
+<thead>
+    <tr>
+      <th> ID </th>
+      <th> Student_Id </th>
+    <th> Student_Name </th>
+    <th>Father_Name</th>
+    <th>Mother_Name</th>
+    <th>Date_of_Birth</th>
+    <th>Gender</th>
+    <th>Email</th>
+    <th>Class_for_Admission</th>
+    <th> Address  </th>
+    <th>State</th>
+    <th>City</th>
+    <th>Pincode</th>
+    <th>Phone_No</th>
+    <th>ProfilePicture</th>
+    <!-- <th>Status</th> -->
+    <th class="text-center">Action</th>
+     </tr>
+</thead>
+<tbody>
+
+  <!-- step 14 form   paste here copy from components.ts page -->
+    @for (item of registrationList; track $index){         <!--this line add for only dynamic -->
+   
+   <!-- @for likh kr press enter the all syntex automatic written the we pass array (registrationList) that which we copy   -->
+    <tr>
+      <!-- now start data binding  -->
+        <!-- same as model -->
+          <td>{{item.id}}</td>
+         <td>{{item.studentId}}</td>
+        <td>{{item.student_Name}}</td>
+        <td>{{item.father_Name}}</td>
+        <td>{{item.mother_Name}}</td>
+        <td>{{item.date_of_Birth}}</td>
+        <td>{{item.gender}}</td>
+        <td>{{item.email}}</td>
+        <td>{{item.class_for_Admission}}</td>
+        <td>{{item.address}}</td>
+        <td>{{item.state}}</td>
+        <td>{{item.city}}</td>
+        <td>{{item.pincode}}</td>
+        <td>{{item.phone_No}}</td>
+        <td>{{item.profilePicture}}</td>
+        <td class="text-center">
+        <div class="btn btn-primary">EDIT</div>  
+        <div class="btn btn-danger" (click)="deleteRegistration(item.studentId)">Delete</div> 
+        <div class="btn btn-danger"
+     data-bs-toggle="modal"
+     data-bs-target="#deleteModal"
+     (click)="openDeleteModal(item.studentId)">
+  ConformDelete
+</div> 
+        <!-- step 2 delete -->
+         <!-- for step 3 go to cmponents.ts page for onDelete method -->
+        </td>
+        <!-- paste method on below ngOnInit  for step 15-->
+        <!-- now for check real time data come go to components.ts page for step -15   components.ts page-->
+    </tr>
+    <!-- <tr>
+        <td>Dipu kumar</td>
+        <td>Radhe Shyam Singh</td>
+        <td>Raj kumari Devi</td>
+        <td>14/10/1991</td>
+        <td>Male</td>
+        <td>god.dipu&#64;gmail.com</td>
+        <td>MCA</td>
+        <td>Mahinawa</td>
+        <td>Bihar</td>
+        <td>Patna</td>
+        <td>801108</td>
+        <td>9097372728</td>
+        <td>Dipupic</td>
+        
+        <td class="text-center">
+        <div class="btn btn-primary">EDIT</div>  
+        <div class="btn btn-danger">DELETE</div>
+        </td>
+
+    </tr> -->
+  }
+</tbody>
+      </table>
+      </div>
+</div>
+                                       <!-- Modal start (popup) -->
+<!--  Button to Open the Modal   -->
+         <!-- Note 1.we close this button because we use button through java script -->
+<!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
+  Open modal
+</button> -->
+
+<!-- The Modal -->
+<div class="modal" id="myModal" #myModal>  <!-- #myModa used in Viewchield -->
+ <!-- here # which is used in #myModal worke as a selector -->
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+       <div class="modal-header bg-info" > <!-- bg-info to give same background color like registration which is also use in registrain -->
+        <h4 class="modal-title">Add Details</h4>
+        <button type="button" (click)="closeModal()" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+                       <!-- step 3 form bind  -->
+ 
+      <!-- under form tag we put form body and form footer -->
+   <form [formGroup]="registrationForm"(ngSubmit)="onsubmit()">
+           <!-- now create method for onsubit on ts page   step 4 -->
+      <!-- Modal body -->
+      <div class="modal-body">
+        <!--1. create form here  steps 1 start -->
+         <div class="row mt-3">
+          <div class="col-6">
+            <!-- we use formcontrolname for onsubmit method to capture value same as model name   step 5  -->
+            <input type="text" formControlName="Student_Name" name="name" class="form-control" placeholder="Student name">
+          </div>
+          <div class="col-6">
+            <input type="text" formControlName="Father_Name" name="Fathername" class="form-control" placeholder="Father Name">
+          </div>
+         </div>
+          <div class="row mt-3">
+          <div class="col-6">
+            <input type="text" formControlName="Mother_Name" name="Mothername" class="form-control" placeholder="Mother name">
+          </div>
+          <div class="col-6">
+            <input type="date" formControlName="Date_of_Birth" name="DOB" class="form-control" placeholder="DOB">
+          </div>
+         </div>
+          <div class="row mt-3">
+          <div class="col-6">
+            <input type="text" formControlName="Gender" name="Gender" class="form-control" placeholder="Gender">
+          </div>
+          <div class="col-6">
+            <input type="text" formControlName="Email" name="Email" class="form-control" placeholder="Email">
+          </div>
+         </div>
+          <div class="row mt-3">
+          <div class="col-6">
+            <input type="text" formControlName="Class_for_Admission" name="Class_for_Admission" class="form-control" placeholder="Class_for_Admission">
+          </div>
+          <div class="col-6">
+            <input type="text" formControlName="Address" name="Address" class="form-control" placeholder="Address">
+          </div>
+         </div>
+          <div class="row mt-3">
+          <div class="col-6">
+            <input type="text" formControlName="State" name="State" class="form-control" placeholder="State">
+          </div>
+          <div class="col-6">
+            <input type="text" formControlName="City" name="City" class="form-control" placeholder="City">
+          </div>
+         </div>
+          <div class="row mt-3">
+          <div class="col-6">
+            <input type="number" formControlName="Pincode" name="Pincode" class="form-control" placeholder="Pincode">
+          </div>
+          <div class="col-6">
+            <input type="number" formControlName="Phone_No" name="Phone_No" class="form-control" placeholder="Phone_No">
+          </div>
+         </div>
+         <!-- <div class="row">
+      <div class="col-12">
+        <input type="text" name="ProfilePicture" class="form-control" placeholder="ProfilePicture">
+      </div>
+         </div> -->
+         <div class="row mt-3">
+          <div class="col-6">
+            <input type="text" formControlName="ProfilePicture" name="ProfilePicture" class="form-control" placeholder="ProfilePicture">
+          </div>
+          <div class="col-6">
+            <div class="form-group form-check">
+<input type="checkbox" name="Active" class="form-check-input" placeholder="">
+<label>Active?</label>
+
+            </div>
+            
+          </div>
+         </div>
+      </div>
+ <!-- Modal body end .  now step 2 to go typescrypt page (.ts)-->
+      <!-- Modal footer -->
+      <div class="modal-footer">
+         <button [disabled]="this.registrationForm.invalid" type="submit"   class="btn btn-primary" data-bs-dismiss="modal">Save</button>
+     
+        <button type="button" (click)="closeModal()" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+      </div>
+</form>
+    </div>
+  </div>
+</div>
+
+<!--  Modal End   -->
+
+<!-- Delete Confirmation Modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title">Confirm Delete</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <div class="modal-body">
+        Are you sure you want to delete this record?
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-bs-dismiss="modal">
+          Cancel
+        </button>
+        <button class="btn btn-danger"
+                data-bs-dismiss="modal"
+                (click)="confirmDelete()">
+          Yes, Delete
+        </button>
+      </div>
+
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,132 @@
+
+ <!-- Topbar Start  all requirement in this code -->
+      <div class="container-fluid bg-primary">
+        <!-- loader  -->
+               <!-- <div class="loader_bg">
+                   <div class="loader">  -->
+                      <!-- <img src="images/Loading.gif" alt="Loading..." /> -->
+                       <!-- <img src="images/Load.gif" alt="Loading..." />
+                   </div>
+               </div> -->
+       <!-- end loader  -->
+       
+               <div class="row py-2 px-lg-5">
+                   <div class="col-lg-4 text-center text-lg-left mb-2 mb-lg-0">
+                       <div class="d-inline-flex align-items-center text-white ">
+                           <small><i class="fa-solid fa-phone"></i>+91 9608777626</small>
+                           <small class="px-3">|</small>
+                           <small><i class="fa fa-envelope mr-2"></i>god.dipu&#64;gmail.com</small>
+                       </div>
+                   </div>
+                   
+                   <div class="col-lg-4 text-center text-lg-center mb-2 mb-lg-0">
+                       <div class="d-inline-flex align-items-center text-white ">
+                           <small><i class="fa-solid fa-clock"></i>MON-SUN : 09:00AM - 08:00PM</small>
+                         
+                          
+                       </div>
+                   </div>
+       
+                   <div class="col-lg-4 text-center text-lg-right">
+                       <div class="d-inline-flex align-items-center">
+                           <a class="text-white px-2" href="">
+                               <i class="fa-brands fa-facebook"></i>
+                           </a>
+                           <a class="text-white px-2" href="">
+                               <i class="fa-brands fa-twitter"></i>
+                           </a>
+                           <a class="text-white px-2" href="">
+                               <i class="fa-brands fa-linkedin-in"></i>
+                           </a>
+                           <a class="text-white px-2" href="">
+                               <i class="fa-brands fa-instagram"></i>
+                           </a>
+                           <a class="text-white pl-2" href="">
+                               <i class="fa-brands fa-youtube"></i>
+                           </a>
+                       </div>
+                   </div>
+               </div>
+            </div>
+           <!-- Topbar End -->
+
+
+           <!-- Header -->
+ <header class="header">
+    <!-- Header Inner -->
+    <div class="header-inner overlay">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-12">
+                    <!-- Logo -->
+                     <!-- <div class="logo">
+                        <a href="index.html">
+                            <i class="fa fa-book me-3"></i>eLEARNING</a>
+                    </div>  -->
+                    <div class="logo">
+                        <a routerLink="/home">
+                        <!-- <i class="fa-solid fa-book-open me-3"></i> -->
+                      <img src="assets/images/BB_Logoo.jpg" class="logo-img" loading="eager" alt="">    
+                              
+                            </a>
+                    </div>
+                    <!--/ End Logo -->
+                   
+                    <div class="mobile-menu"></div>
+                </div>
+                <div class="col-lg-9 col-md-9 col-12">
+                    <div class="menu-bar">
+                        <nav class="navbar navbar-default">
+                            <div class="navbar-collapse">
+                                 <!-- Main Menu -->
+                                 <ul id="nav" class="nav menu navbar-nav">
+                                    <!-- 'routerLinkActiveOptions' this get error so import routemodule in ts page-->
+                                    <li routerLinkActive="active" > <a routerLink="/home"><i class="fa fa-home"></i>Home</a></li>
+                                    
+                                    <!-- <li ><a routerLink="/#"><i class="fa fa-clone"></i>Pages</a>  -->
+                                        <li routerLinkActive="active">
+                                         <a href="javascript:void(0)">     <!-- this s used for same page redirect -->
+                                                    <i class="fa fa-clone"></i>Pages
+                                                </a>
+                                        <ul class="dropdown">
+                                            <li routerLinkActive="active" > <a routerLink="/about" >About Us</a></li>
+                                            <li routerLinkActive="active"> <a routerLink="/course" >Teachers</a></li>
+                                            <li routerLinkActive="active"> <a routerLink="/gallery" >Gallery</a></li>
+                                            <li routerLinkActive="active"> <a routerLink="/events" >Register</a></li>
+                                        </ul>
+                                    </li>
+                                    <li routerLinkActive="active"  [routerLinkActiveOptions]="{ exact: true }"><a routerLink="/course"><i class="fa-solid fa-book-open"></i>Our Courses</a></li>
+                                    <li routerLinkActive="active"  [routerLinkActiveOptions]="{ exact: true }"><a routerLink="/events"><i class="fa fa-bullhorn"></i>Events</a></li>
+                                    <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"><a routerLink="/contact"><i class="fa fa-address-book"></i>Contact</a> </li>
+                                    <li routerLinkActive="active" > <a href="javascript:void(0)"><i class="fa fa-user"></i>Login</a> 
+                                 <ul class="dropdown">
+                                        <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"><a routerLink="/login" >Admin</a></li>
+                                        <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"><a routerLink="/registration">Teachers</a></li>
+                                        <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"><a routerLink="/user">User</a></li>
+                                       
+                                    </ul>
+                            </li>
+                                </ul>
+                                <!-- End Main Menu -->
+                            </div> 
+                        </nav>
+                        <!-- Search Area -->
+                        <div class="search-area">
+                            <a href="#header" class="icon"><i class="fa fa-search"></i></a>
+                            <form class="search-form">
+                                <input type="text" placeholder="ex: premium course" name="search">
+                                <button value="search " type="submit"><i class="fa fa-search"></i></button>
+                            </form>
+                        </div>	
+                        <!-- End Search Area-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/ End Header Inner -->
+</header>
+<!--/ End Header -->
+
+
+           

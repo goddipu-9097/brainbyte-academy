@@ -1,0 +1,56 @@
+/* Breadcrumbs CSS */
+.breadcrumbs {
+	background-position: 100%;
+	position: relative;
+	background-repeat: no-repeat;
+	background-size: cover;
+	padding: 60px 0;
+}
+.breadcrumbs h2 {
+	color: #fff;
+	font-size: 34px;
+	font-weight: 700;
+	margin-top: 5px;
+}
+.breadcrumbs p {
+	color: #ccc;
+	margin-top: 5px;
+}
+.breadcrumbs .bread-list {
+	background: rgba(255, 255, 255, 0.15);
+	display: inline-block;
+	/* padding: 10px 10px; */
+	float: right;
+
+}
+.breadcrumbs ul li {
+	display: inline-block;
+	position: relative;
+	margin-right: 10px;
+}
+.breadcrumbs ul li:last-child{
+	margin:0;
+}
+.breadcrumbs ul li a {
+	color: #fff;
+	font-size: 14px;
+	font-weight: 500;
+	text-transform: capitalize;
+}
+.breadcrumbs ul li.active a {
+	color: #fff;
+	padding: 7px 20px;
+	display: inline-block;
+}
+.breadcrumbs ul li.active a:hover{
+	background:#fff;
+	color:#20232E;
+}
+.breadcrumbs ul li i {
+	margin-left: 5px;
+}
+
+.breadcrumbs .active {
+	background: green;
+	padding: 18px 20px;
+}

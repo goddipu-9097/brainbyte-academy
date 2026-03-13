@@ -1,0 +1,360 @@
+/*===============================
+	 CSS
+=================================*/
+
+.courses {
+	background: #f8f8f8;
+}
+.courses .course-sliderCourses {
+	margin-top: 30px;
+}
+.courses .single-course {
+	padding: 12px;
+	background: #fff;
+	-webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+	-moz-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+	-webkit-transition: all 0.3s ease 0s;
+	-moz-transition: all 0.3s ease 0s;
+	transition: all 0.3s ease 0s;
+	margin-top: 30px;
+}
+.courses .single-course:hover{
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.30);
+}
+.courses .course-head{
+	position:relative;
+	overflow:hidden;
+
+}
+
+.courses .course-head::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: #252525;
+	opacity: 0;
+	visibility: hidden;
+	transition: 0.3s;
+}
+
+
+ .courses .course-head img{
+	height:100%;
+	width:100%;
+	transition: 0.5s;
+    object-fit: cover;
+}
+
+.courses .course-head:hover img{
+	-webkit-transform:scale(1.3);
+	-moz-transform:scale(1.3);
+	transform:scale(1.3);
+}
+.courses .course-head:hover:before{
+	opacity:0.8;
+	visibility:visible;
+}
+
+/* when curser on image then registernow button apper with green --start */
+
+/* When hovering image */
+.courses .course-head:hover a {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Button default hidden on image */
+.courses .course-head a {
+	position: absolute;
+	top: 50%;
+	margin: -25px 0 0 -25px;
+	z-index: 10;
+	border-radius: 0px;
+	left: 50%;
+	font-weight: 500;
+	text-transform: capitalize;
+	margin-left: -58px;
+	padding: 12px 22px;
+	opacity:0;
+	-webkit-transform:scale(0);
+	-moz-transform:scale(0);
+	transform:scale(0);
+	border-radius: 50px;
+    transition: all 0.3s ease;
+    background: #28a745;   /* green */
+    border-color: #28a745;
+    color: #fff;
+}
+
+/* when curser on image then registernow button apper with green --end */
+
+.courses .course-head:hover .btn{
+	transform: scale(1);
+	opacity: 1;
+}
+.courses .course-body {
+	margin: 15px;
+	margin-top: 0px;
+    /* new */
+     flex-grow: 1;
+}
+.courses .name-price {
+	padding: 0;
+	width: 100%;
+	position: relative;
+	z-index: 333;
+	margin-top: -33.5px;
+}
+
+          /* (hover pe name show + rotate) start */
+
+.courses .name-price .teacher-info {
+    display: inline-block;
+    position: relative;   /* ⭐ VERY IMPORTANT */
+    cursor: pointer;
+}
+
+/* image */
+.courses .teacher-info img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 4px solid #fff;
+    box-shadow: 0px 0px 12px rgba(0,0,0,0.15);
+    transition: transform 0.6s ease;  /* smooth rotate */
+}
+
+/* rotate image on hover */
+.courses .teacher-info:hover img {
+    transform: rotate(360deg);
+
+	background: #28a745;     /* circle color change */
+    border-color: #28a745;   /* border change */
+    box-shadow: 0 0 15px rgba(40,167,69,0.6); /* green glow */
+}
+
+/* name tooltip */
+.courses .teacher-info .title {
+    position: absolute;
+    left: 50%;
+    bottom: -45px;
+    transform: translateX(-50%) translateY(10px);
+    
+    background: #28a745;
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s ease;
+    white-space: nowrap;
+}
+
+/* show name on hover */
+.courses .teacher-info:hover .title {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* arrow */
+.courses .teacher-info .title::before {
+    content: "";
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-bottom: 8px solid #28a745;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+}
+
+/* (hover pe name show + rotate) end */
+/* .courses .name-price .teacher-info {
+	display: inline-block;
+} */
+/* .courses .teacher-info img {
+	width: 60px;
+	height: 60px;
+	line-height: 60px;
+	border-radius: 100%;
+	display: inline-block;
+	border: 4px solid #fff;
+	
+	-webkit-box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.15);
+	-moz-box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.15);
+	box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.15);
+} */
+/* .courses .single-course .teacher-info:hover img{
+	-webkit-transform:rotate(360deg);
+	-moz-transform:rotate(360deg);
+	transform:rotate(360deg);
+}
+.courses .teacher-info .title {
+	font-weight: 500;
+	padding: 10px;
+	color: #fff;
+	border-radius: 30px;
+	position: absolute;
+	left: 0;
+	bottom: -43px;
+	z-index: 33;
+	font-size: 13px;
+	-webkit-transform:translateX(-30px);
+	-moz-transform:translateX(-30px);
+	transform:translateX(-30px);
+	opacity:0;
+	visibility:hidden;
+	-webkit-transition: all 0.3s ease 0s;
+	-moz-transition: all 0.3s ease 0s;
+	transition: all 0.3s ease 0s;
+}
+.courses .teacher-info:hover .title{
+	transform:translateX(0px);
+	opacity:1;
+	visibility:visible;
+}
+.courses .teacher-info .title::before {
+	content: "";
+	border-bottom: 12px solid;
+	border-right: 10px solid transparent;
+	border-left: 10px solid transparent;
+	position: absolute;
+	top: -10px;
+} */
+/* Price */
+.courses .price {
+	color: #fff;
+	padding: 5px 25px;
+	font-weight: 700;
+	position: relative;
+	margin-top: 12px;
+	float: right;
+	border-radius: 50px;
+	right: 0;
+    background: #28a745;
+}
+.courses .price::before {
+	/* position: ; */
+	position: absolute;
+	left: 0;
+	/* top: -; */
+	content: "";
+	border-left: 15px solid #fff;
+	border-bottom: 15px solid transparent;
+	border-top: 15px solid transparent;
+	display: none;
+}
+.courses .course-body .c-title {
+	font-size: 18px;
+	text-align: left;
+	margin: 5px 0 15px;
+}
+.courses .course-body .c-title a {
+	color: #252525;
+	font-weight: 700;
+/* add new */
+     transition: 0.3s;
+  text-decoration: none;
+}
+
+.courses .course-body .c-title a:hover {
+  color: #28a745;   /* green */
+}
+
+
+/* on text */
+.courses .course-body p {
+	color: #666;
+}
+.courses .course-meta {
+	background: #fff;
+	border-top: 1px solid rgba(204, 204, 204, 0.45);
+	overflow: hidden;
+	margin: 15px;
+	text-align: left;
+	padding-top: 15px;
+}
+/* Rattings */
+.courses .rattings li {
+	display: inline;
+	margin-right: 2px;
+}
+.courses .rattings li.point span {
+	display: inline-block;
+	position: relative;
+}
+.courses .rattings li.point span:before {
+	content: "(";
+}
+.courses .rattings li.point span::after {
+	content: ")";
+}
+/* Course Info */
+.courses .course-info {
+	margin-top: 4px;
+}
+.courses .course-info span {
+	display: inline-block;
+	color: #888;
+	margin-right: 8px;
+	font-weight: 500;
+	-webkit-transition:all 0.3s ease 0s;
+	-moz-transition:all 0.3s ease 0s;
+	transition:all 0.3s ease 0s;
+}
+.courses .course-info span:last-child{
+	margin-right:0px;
+}
+.courses .course-info span i{
+	margin-right:5px;
+}
+/* Slider Meta */
+.courses .owl-controls {
+	margin-top: 30px;
+}
+.courses .owl-controls .owl-nav div {
+	width: 44px;
+	height: 44px;
+	line-height: 44px;
+	font-size: 22px;
+	padding: 0;
+	border-radius: 100%;
+	color: #555;
+	background: #fff;
+	-webkit-transition: all 0.3s ease 0s;
+	-moz-transition: all 0.3s ease 0s;
+	transition: all 0.3s ease 0s;
+	-webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+	-moz-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.10);
+	margin: 0 10px 0 0;
+	border: 1px solid #ccc;
+}
+.courses .owl-controls .owl-nav div:last-child{
+	margin:0;
+}
+.courses .course-slider:hover .owl-controls .owl-nav div {
+	opacity: 1;
+	visibility: visible;
+}
+.courses .owl-controls .owl-nav div:hover{
+	border-color:transparent;
+	color:#fff;
+}
+/* Courses Archive */
+.courses.archive{
+	padding:60px 0 90px;
+}
+.courses.archive .single-course {
+	margin: 30px 0 0;
+}
+/*===============================
+	End Courses CSS
+=================================*/
