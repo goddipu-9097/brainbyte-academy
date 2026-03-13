@@ -48,7 +48,8 @@
 	box-shadow: none;
 	border: none;
 	position: relative;
-	padding: 0;
+	/* padding: 0; */
+	padding: 0 175px 0 0;
 	float: right;
 	/* padding-right: 50px; */
 	padding-right: 270px;
