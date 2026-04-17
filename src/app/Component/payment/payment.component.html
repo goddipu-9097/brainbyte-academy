@@ -1,13 +1,4 @@
-<!-- <div class="container text-center">
 
-<h2>Online Payment</h2>
-
-<button class="btn btn-success">
-Pay Now
-</button>
-
-</div> -->
-<!--1. index.html me scrypt -->
 
 <div class="container mt-5">
 
@@ -17,11 +8,12 @@ Pay Now
 
 <div class="row">
 <div class="col-md-6">
-<b>Name :</b> {{user?.name}}
+<!-- <b>Name :</b> {{user[0]?.name}}   when use in ts page in -->
+ <b>Name :</b> {{user?.name}}
 </div>
 
 <div class="col-md-6">
-<b>Registration No :</b> {{user?.registrationNo}}
+<b>Registration No :</b> {{user?.registrationId}}
 </div>
 </div>
 
@@ -31,7 +23,7 @@ Pay Now
 </div>
 
 <div class="col-md-6">
-<b>Fee :</b> ₹ {{user?.fee}}
+<b>Registration Fee :</b> ₹ {{user?.fee}}
 </div>
 </div>
 
@@ -40,7 +32,7 @@ Pay Now
 <div class="text-center mt-3">
 
 <button class="btn btn-success" (click)="payNow()">
-Pay ₹{{user.fee}}
+Pay ₹{{user?.fee}}
 </button>
 
 </div>

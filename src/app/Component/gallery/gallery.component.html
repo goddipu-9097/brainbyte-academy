@@ -1,1 +1,30 @@
-<p>gallery works!</p>
+<!--1. install first --npm install ngx-lightbox -->
+ <!-- 2.angular.json styles:
+"styles": [
+  "node_modules/ngx-lightbox/lightbox.css",
+  "src/styles.css"
+] -->
+ <!--3. after install restart angular -->
+
+<div class="container py-5">
+
+  <div class="text-center mb-5">
+    <h6 class="text-primary">Gallery</h6>
+    <h1>Our Gallery</h1>
+  </div>
+
+  <div class="row g-4">
+    <div class="col-lg-3 col-md-4 col-sm-6"
+         *ngFor="let img of albums; let i = index">
+
+      <div class="gallery-card" (click)="open(i)">
+        <img [src]="img.thumb" alt="">
+        <div class="overlay">
+          <span>View</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>

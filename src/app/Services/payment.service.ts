@@ -17,4 +17,11 @@ verifyPayment(data:any){
 return this.http.post("https://localhost:7213/api/Payment/VerifyPayment",data)
 }
 
+
+getRegistrationDetail(regNo:any){
+return this.http.get(
+`https://localhost:7213/api/Payment/GetRegistrationDetail?registrationId=${regNo}`
+)
+}
+
 }

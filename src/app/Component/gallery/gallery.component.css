@@ -1,0 +1,39 @@
+.gallery-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.gallery-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  transition: 0.4s;
+}
+
+.gallery-card:hover img {
+  transform: scale(1.1);
+}
+
+/* Overlay */
+.gallery-card .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5); /* clean dark overlay */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 18px;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.gallery-card:hover .overlay {
+  opacity: 1;
+}

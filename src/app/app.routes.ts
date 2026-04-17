@@ -12,6 +12,9 @@ import { GalleryComponent } from './Component/gallery/gallery.component';
 import { ContactComponent } from './Component/contact/contact.component';
 import { AboutComponent } from './Component/about/about.component';
 import { PaymentComponent } from './Component/payment/payment.component';
+import { PaymentHistoryComponent } from './Component/payment-history/payment-history.component';
+import { ErrorPageComponent } from './Component/error-page/error-page.component';
+import { AchievementComponent } from './Component/achievement/achievement.component';
 
 
 // export const routes: Routes = [
@@ -88,8 +91,22 @@ import { PaymentComponent } from './Component/payment/payment.component';
 path:"payment",
 component:PaymentComponent,
 data: { title: 'Payment' }
+  },
+   {
+path:"paymenthistory",
+component:PaymentHistoryComponent,
+data: { title: 'PaymentHistory' }
+  },
+  {
+path:"errorPage",
+component:ErrorPageComponent,
+data: { title: '404 Error Page' }
+  },
+  {
+path:"achievement",
+component:AchievementComponent,
+data: { title: 'Achievement' }
   }
-  
 
 //   ,
 //   {

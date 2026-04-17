@@ -1,0 +1,34 @@
+
+
+<table class="table table-bordered">
+
+<tr>
+<th>Order Id</th>
+<th>Payment Id</th>
+<th>Amount</th>
+<th>Status</th>
+<th>Date</th>
+</tr>
+
+<tr *ngFor="let p of paymentList">
+
+<td>{{p.orderId}}</td>
+<td>{{p.paymentId}}</td>
+<td>{{p.amount}}</td>
+<td>{{p.status}}</td>
+<td>
+
+<span *ngIf="p.status=='Success'" style="color:green">
+Success
+</span>
+
+<span *ngIf="p.status!='Success'" style="color:red">
+Failed
+</span>
+
+</td>
+<td>{{p.paymentDate}}</td>
+
+</tr>
+
+</table>

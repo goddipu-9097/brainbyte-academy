@@ -49,10 +49,10 @@
 	border: none;
 	position: relative;
 	/* padding: 0; */
-	padding: 0 180px 0 0;
+	padding: 0 128px 0 0;
 	float: right;
 	/* padding-right: 50px; */
-	/* padding-right: 270px; */
+	/* padding-right: 270px; */ 
 }
 .header .navbar-nav {
 	display: block;

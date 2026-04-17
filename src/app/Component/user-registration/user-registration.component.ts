@@ -39,7 +39,8 @@ constructor(
     password: new FormControl('', Validators.required),
     mobile: new FormControl('', Validators.required),
     aadhar: new FormControl('', Validators.required),
-     course: new FormControl('', Validators.required)
+     course: new FormControl('', Validators.required),
+     
   });
 
 }
@@ -97,6 +98,7 @@ closeUserRegistrationModal() {
 
 // when we payment add to send data 
 userRegistrationonsubmit() {
+  console.log('userRegistrationForm', this.userRegistrationForm) // log use
 
   if (this.userRegistrationForm.valid) {
 
@@ -110,13 +112,13 @@ userRegistrationonsubmit() {
 
         let userData = {
           name: formData.name,
-          // registrationNo: "REG12345",
-          registrationNo: formData.registrationId,
+          //registrationNo: "REG12345",
+          registrationNo: formData.RegistrationId,
           course: formData.course,
           fee: 500
         };
 console.log("Saving userData:", userData);// thi add for check data in console browser
-        localStorage.setItem("registerUser", JSON.stringify(userData)); // here data save for in  payment page show
+        localStorage.setItem("userName", this.userRegistrationForm.value.userName); // here data save for in  payment page show
 
         // Redirect to payment page
         this.router.navigate(['/payment']);

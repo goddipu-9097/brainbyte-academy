@@ -28,6 +28,31 @@
 
 <!-- razorpay -->
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<!-- image open in full in about section -->
+<!-- <script>
+document.querySelectorAll('.popup-link').forEach(img => {
+    img.addEventListener('click', function(e) {
+        e.preventDefault();
+
+        let src = this.getAttribute('href');
+
+        let popup = document.createElement('div');
+        popup.classList.add('img-popup');
+
+        popup.innerHTML = `
+            <span class="close-btn">&times;</span>
+            <img src="${src}">
+        `;
+
+        document.body.appendChild(popup);
+
+        popup.querySelector('.close-btn').onclick = () => popup.remove();
+        popup.onclick = (e) => {
+            if (e.target !== popup.querySelector('img')) popup.remove();
+        };
+    });
+});
+</script> -->
 
 
 </body>
