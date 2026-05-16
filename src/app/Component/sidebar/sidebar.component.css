@@ -1,0 +1,87 @@
+.sidebar {
+  height: 100vh;
+  background: #1e1e2d;
+  color: white;
+  padding: 20px;
+}
+
+
+
+.sidebar {
+  width: 260px;
+  height: 100vh;
+  background: #dcdce8;
+  position: fixed;
+  left: 0;
+  top: 0;
+  padding-top: 20px;
+  overflow-y: auto;
+}
+
+/* .logo {
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  padding: 0 25px 20px;
+} */
+.sidebar .logo-img{
+  height:67px;
+  width:stretch;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  padding: 20px 25px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.profile img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  margin-right: 12px;
+}
+
+.profile h4 {
+  color: white;
+  margin: 0;
+  font-size: 16px;
+}
+
+.profile p {
+  color: #aaa;
+  margin: 0;
+  font-size: 13px;
+}
+
+.menu {
+  list-style: none;
+  padding: 20px 0;
+  margin: 0;
+}
+
+.menu li {
+  margin-bottom: 5px;
+}
+
+.menu li a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #b3b3c3;
+  text-decoration: none;
+  padding: 14px 25px;
+  transition: 0.3s;
+  font-size: 15px;
+}
+
+.menu li a:hover {
+  background: #282037;
+  color: white;
+}
+
+.menu li.active a {
+  background: #282037;
+  color: #b66dff;
+}

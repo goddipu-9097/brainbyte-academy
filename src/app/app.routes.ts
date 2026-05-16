@@ -15,6 +15,12 @@ import { PaymentComponent } from './Component/payment/payment.component';
 import { PaymentHistoryComponent } from './Component/payment-history/payment-history.component';
 import { ErrorPageComponent } from './Component/error-page/error-page.component';
 import { AchievementComponent } from './Component/achievement/achievement.component';
+import { DashboardComponent } from './Component/dashboard/dashboard.component';
+import { NavbarComponent } from './Component/navbar/navbar.component';
+import { SidebarComponent } from './Component/sidebar/sidebar.component';
+import { ProfileComponent } from './Component/profile/profile.component';
+import { LayoutComponent } from './Component/layout/layout.component';
+import { UserDashboardComponent } from './Component/user-dashboard/user-dashboard.component';
 
 
 // export const routes: Routes = [
@@ -102,12 +108,54 @@ path:"errorPage",
 component:ErrorPageComponent,
 data: { title: '404 Error Page' }
   },
+ 
+ 
   {
+  path:"navbar",
+component:NavbarComponent,
+data: { title: 'Navbar' }
+  },
+  {
+  path:"sidebar",
+component:SidebarComponent,
+data: { title: 'Sidebar' }
+  },
+  {
+  path:"user-dashboard",
+component:UserDashboardComponent,
+data: { title: 'User-Dashboard' }
+  },
+  
+
+  // make  dashboard/profile ko children banao.
+
+{
+  path:"layout",
+component:LayoutComponent,
+data: { title: 'Admin Layout' },
+
+children:[
+
+     {
+path:"dashboard",
+component:DashboardComponent,
+data: { title: 'Dashboard' }
+  },
+
+    {
+  path:"profile",
+component:ProfileComponent,
+data: { title: 'Profile' }
+  },
+
+     {
 path:"achievement",
 component:AchievementComponent,
 data: { title: 'Achievement' }
-  }
+  },
+  ]
 
+  }
 //   ,
 //   {
 //     path: "dipu",

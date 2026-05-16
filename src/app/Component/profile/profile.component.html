@@ -1,0 +1,325 @@
+
+<!-- <app-sidebar></app-sidebar>
+
+<app-navbar></app-navbar> -->
+
+<div class="dashboard">
+<div class="card-container ">
+
+    <mat-card class="example-card card1" (click)="openprofileModal()" appearance="outlined">
+  
+      <div class="icon-circle ">
+        <mat-icon>location_on</mat-icon>
+      </div>
+  
+      <mat-card-content>
+        <p>ADDRESS</p>
+      </mat-card-content>
+  
+    </mat-card>
+  
+    <mat-card class="example-card card2" (click)="openPersonalInformationModal()" appearance="outlined">
+  
+      <div class="icon-circle">
+        <mat-icon>person</mat-icon>
+      </div>
+  
+      <mat-card-content>
+        <p>PERSONAL INFORMATION</p>
+      </mat-card-content>
+  
+    </mat-card>
+  
+    <mat-card class="example-card card3" (click)="openEducationModal()" appearance="outlined">
+  
+      <div class="icon-circle">
+        <mat-icon>school</mat-icon>
+      </div>
+  
+      <mat-card-content>
+        <p>EDUCATION</p>
+      </mat-card-content>
+  
+    </mat-card>
+  
+  </div>
+
+  <div class="card-container">
+
+  <mat-card class="example-card card4" appearance="outlined">
+
+    <div class="icon-circle">
+      <mat-icon>badge</mat-icon>
+    </div>
+
+    <mat-card-content>
+      <p>PHOTO ID PROOF</p>
+    </mat-card-content>
+
+  </mat-card>
+
+  <mat-card class="example-card card5" appearance="outlined">
+
+    <div class="icon-circle">
+      <mat-icon>account_balance</mat-icon>
+    </div>
+
+    <mat-card-content>
+      <p>BANK ACCOUNT DETAIL</p>
+    </mat-card-content>
+
+  </mat-card>
+
+  <mat-card class="example-card card6" appearance="outlined">
+
+    <div class="icon-circle">
+      <mat-icon>phone</mat-icon>
+    </div>
+
+    <mat-card-content>
+      <p>MOBILE NO AND EMAIL ID</p>
+    </mat-card-content>
+
+  </mat-card>
+
+</div>
+
+</div>
+
+
+<!-- The Modal address-->
+ <div class="modal fade" id="myModal" #myModal> <!--  #myModa used in Viewchield -->
+
+
+   <div class="modal-dialog modal-lg modal-dialog-centered"> <!--this is used for  show long  -->
+ <!-- here # which is used in #myModal worke as a selector -->
+  <!-- <div class="modal-dialog"> this is used for short screen  -->
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+       <div class="modal-header background-color: beige  " > <!-- bg-info to give same background color like registration which is also use in registrain -->
+        <mat-icon>location_on</mat-icon>
+        <h4 class="modal-title">Communication Address</h4>
+         <!-- <button type="button" class="btn btn-blue w-25" >Edit</button> -->
+        <button type="button" (click)="closeprofileModal()" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+                       <!-- step 3 form bind  -->
+ 
+   
+   <form [formGroup]="UserProfileForm"(ngSubmit)="userProfilesubmit()">
+         
+      <!-- Modal body -->
+      <div class="modal-body background-color: beige;">
+        <!--1. create form here  steps 1 start -->
+         <div class="row mt-3">
+          <div class="col-6">
+            <!-- we use formcontrolname for onsubmit method to capture value same as model name   step 5  -->
+            <input type="text"  name="AddressLine1" class="form-control" placeholder="Address Line 1">
+          </div>
+          <div class="col-6">
+            <input type="text"  name="AddressLine2" class="form-control" placeholder="Address Line 2">
+          </div>
+         </div>
+          <div class="row mt-3">
+          <div class="col-6">
+            <input type="text"  name="State" class="form-control" placeholder="State">
+          </div>
+          <div class="col-6">
+            <input type="text"  name="District" class="form-control" placeholder="District">
+          </div>
+         </div>
+          <div class="row mt-3">
+          <div class="col-6">
+            <input type="text"  name="Block" class="form-control" placeholder="Block">
+          </div>
+          <div class="col-6">
+            <input type="text"  name="City" class="form-control" placeholder="City">
+          </div>
+          <div class="col-6">
+            <input type="text"  name="pincode" class="form-control" placeholder="aadhar">
+          </div>
+           <div class="col-6">
+            <input type="text"  name="landmark" class="form-control" placeholder="Landmark">
+          </div>
+         </div>
+
+            <div class="modal-header background-color: beige  " > <!-- bg-info to give same background color like registration which is also use in registrain -->
+        <mat-icon>home</mat-icon>
+        <h4 class="modal-title">Permanent Address</h4>
+        
+      </div>
+      <div>
+       <mat-pseudo-checkbox></mat-pseudo-checkbox>
+       <span><h4 class="modal-title" colour:red>Same as Communication Address</h4></span>
+
+         <!-- <h4 class="modal-title">Same as Communication Address</h4> -->
+      </div>
+
+      <div class="row mt-3">
+          <div class="col-6">
+            <!-- we use formcontrolname for onsubmit method to capture value same as model name   step 5  -->
+            <input type="text" name="AddressLine1" class="form-control" placeholder="Address Line 1">
+          </div>
+          <div class="col-6">
+            <input type="text"  name="AddressLine2" class="form-control" placeholder="Address Line 2">
+          </div>
+         </div>
+          <div class="row mt-3">
+          <div class="col-6">
+            <input type="text"  name="State" class="form-control" placeholder="State">
+          </div>
+          <div class="col-6">
+            <input type="text"  name="District" class="form-control" placeholder="District">
+          </div>
+         </div>
+          <div class="row mt-3">
+          <div class="col-6">
+            <input type="text"  name="Block" class="form-control" placeholder="Block">
+          </div>
+          <div class="col-6">
+            <input type="text" name="City" class="form-control" placeholder="City">
+          </div>
+          <div class="col-6">
+            <input type="text" name="pincode" class="form-control" placeholder="aadhar">
+          </div>
+           <div class="col-6">
+            <input type="text"  name="landmark" class="form-control" placeholder="Landmark">
+          </div>
+         </div>
+             </div>
+ <!-- Modal body end .  now step 2 to go typescrypt page (.ts)-->
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" (click)="closeprofileModal()" class="btn btn-blue w-25" data-bs-dismiss="modal">Close</button>
+      </div>
+</form>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- The Modal personal Information -->
+ <div class="modal fade" id="myModal2" #myModal2> <!--  #myModa used in Viewchield -->
+
+
+   <div class="modal-dialog modal-lg modal-dialog-centered"> <!--this is used for  show long  -->
+ <!-- here # which is used in #myModal worke as a selector -->
+  <!-- <div class="modal-dialog"> this is used for short screen  -->
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+       <div class="modal-header background-color: beige  " > <!-- bg-info to give same background color like registration which is also use in registrain -->
+        <mat-icon>location_on</mat-icon>
+        <h4 class="modal-title">personal Information </h4>
+         <!-- <button type="button" class="btn btn-blue w-25" >Edit</button> -->
+        <button type="button" (click)="ClosePersonalInformationModal()" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+                       <!-- step 3 form bind  -->
+ 
+   
+   <form [formGroup]="UserProfileForm"(ngSubmit)="userProfilesubmit()">
+            <!-- note ---- 
+         when we use formcontrol then model not work if use formcontrol then complete 
+         everwere in ts page also -->
+      <!-- Modal body -->
+      <div class="modal-body background-color: beige;">
+        <!--1. create form here  steps 1 start -->
+         <div class="row mt-3">
+          <div class="col-6">
+            <!-- we use formcontrolname for onsubmit method to capture value same as model name   step 5  -->
+            <!-- <input type="text" formcontrolname="name" name="Name" class="form-control" placeholder="Name"> -->
+           <input type="text"  name="Name" class="form-control" placeholder="Name">
+         
+          </div>
+          <div class="col-6">
+            <input type="text"  name="Gender" class="form-control" placeholder="Gender">
+          </div>
+         </div>
+          <div class="row mt-3">
+          <div class="col-6">
+            <input type="text"  name="State" class="form-control" placeholder="State">
+          </div>
+          <div class="col-6">
+            <input type="text"  name="DOB" class="form-control" placeholder="DOB">
+          </div>
+         </div>
+     
+     
+             </div>
+ <!-- Modal body end .  now step 2 to go typescrypt page (.ts)-->
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" (click)="closeprofileModal()" class="btn btn-blue w-25" data-bs-dismiss="modal">Save</button>
+      </div>
+</form>
+    </div>
+  </div>
+</div>
+
+<!-- The Modal Education -->
+ <div class="modal fade" id="educationModal" #educationModal> 
+   <div class="modal-dialog modal-lg modal-dialog-centered"> 
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+       <div class="modal-header background-color: beige  " > <!-- bg-info to give same background color like registration which is also use in registrain -->
+        <mat-icon>school</mat-icon>
+        <h4 class="modal-title">Education Information </h4>
+        <button type="button" (click)="CloseEducationModal()" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+                       <!-- step 3 form bind  -->
+ 
+   
+   <form [formGroup]="UserProfileForm"(ngSubmit)="userProfilesubmit()">
+         
+      <!-- Modal body -->
+      <div class="modal-body background-color: beige;">
+        <!--1. create form here  steps 1 start -->
+         <div class="row mt-3">
+          <div class="col-6">
+            <!-- we use formcontrolname for onsubmit method to capture value same as model name   step 5  -->
+            <input type="text"  name="EducationType" class="form-control" placeholder="Education Type">
+          </div>
+          <div class="col-6">
+            <input type="text"  name="courseName" class="form-control" placeholder="Course Name">
+          </div>
+         </div>
+          <div class="row mt-3">
+          <div class="col-6">
+            <input type="text"  name="instituteName" class="form-control" placeholder="Name Of Institute">
+          </div>
+          <div class="col-6">
+            <input type="text" name="instituteType" class="form-control" placeholder="Institute Type">
+          </div>
+         </div>
+
+         <div class="row mt-3">
+          <div class="col-6">
+            <input type="text"  name="board" class="form-control" placeholder="Board">
+          </div>
+          <div class="col-6">
+            <input type="text"  name="medium" class="form-control" placeholder="Medium">
+          </div>
+         </div>
+
+          <div class="row mt-3">
+          <div class="col-6">
+            <input type="text"  name="passingYear" class="form-control" placeholder="Passing Status">
+          </div>
+          <div class="col-6">
+            <input type="text"  name="passingStatus" class="form-control" placeholder="Passing Year">
+          </div>
+         </div>
+     
+     
+             </div>
+ <!-- Modal body end .  now step 2 to go typescrypt page (.ts)-->
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" (click)="saveEducationModal()" class="btn btn-blue w-25" data-bs-dismiss="modal">Save</button>
+      </div>
+</form>
+    </div>
+  </div>
+</div>

@@ -374,3 +374,29 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 /*=============================
 	End Footer CSS
 ===============================*/
+
+
+/* this is for dashboard ,side bar,navbar globaly */
+.container-scroller {
+  overflow: hidden;
+}
+
+.page-body-wrapper {
+  display: flex;
+}
+
+.sidebar {
+  width: 260px;
+  min-height: 100vh;
+  background: #fff;
+}
+
+.main-panel {
+  flex-grow: 1;
+  background: #f2edf3;
+  min-height: 100vh;
+}
+
+.content-wrapper {
+  padding: 30px;
+}

@@ -1,0 +1,42 @@
+.dashboard {
+  margin-left: 260px;
+  padding: 90px 25px 25px;
+  background: #f2edf3;
+  min-height: 100vh;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 20px;
+}
+
+.card-box {
+  padding: 30px;
+  border-radius: 15px;
+  color: white;
+}
+
+.card1 {
+  background: linear-gradient(to right,#ffb88c,#de6262);
+}
+
+.card2 {
+  background: linear-gradient(to right,#36d1dc,#5b86e5);
+}
+
+.card3 {
+  background: linear-gradient(to right,#11998e,#38ef7d);
+}
+
+.card-box h2 {
+  font-size: 42px;
+  margin: 15px 0;
+}
+
+.table-box {
+  margin-top: 30px;
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+}

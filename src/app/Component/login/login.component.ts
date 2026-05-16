@@ -56,7 +56,8 @@ constructor(
     email: new FormControl('', Validators.required),
     password: new FormControl('', Validators.required),
     mobile: new FormControl('', Validators.required),
-    aadhar: new FormControl('')
+    aadhar: new FormControl(''),
+    roleId: new FormControl(2)   //automatic send 2 for user
   });
 
 }
@@ -162,8 +163,35 @@ userRegistrationonsubmit() {
 // }
 
          // validation chek
+          // simpe login redirect to one any page 
+// login() {
+//   if (this.loginForm.invalid) {
+//     this.loginForm.markAllAsTouched();
+//     return;
+//   }
 
+//   this.loginServices.login(
+//     this.loginForm.value.username,
+//     this.loginForm.value.password
+//   ).subscribe({
+//     next: (res: any) => {
+
+//       // ✅ SUCCESS
+//       alert('Login successful');
+
+//       // ✅ redirect after alert
+//       this.router.navigate(['/registration']);
+//     },
+//     error: (err) => {
+
+//       // ❌ FAILURE
+//       alert('Login failed. Invalid username or password');
+//     }
+//   });
+// }
+         // login after redirect user and admin dashboard
 login() {
+
   if (this.loginForm.invalid) {
     this.loginForm.markAllAsTouched();
     return;
@@ -173,23 +201,46 @@ login() {
     this.loginForm.value.username,
     this.loginForm.value.password
   ).subscribe({
+
     next: (res: any) => {
 
-      // ✅ SUCCESS
-      alert('Login successful');
+      console.log(res);
 
-      // ✅ redirect after alert
-      this.router.navigate(['/registration']);
+      if (res.status == "success") {
+
+        const user = res.data[0];
+
+        // save user data
+        localStorage.setItem("user", JSON.stringify(user));
+
+        alert("Login Successful");
+
+        // ROLE BASED REDIRECT
+        if (user.roleId   == "1") {
+
+          // this.router.navigate(['/layout/dashboard']);
+          this.router.navigate(['/layout/dashboard']);
+
+        }
+        else if (user.roleId   == "2") {// as it is jo output me aa raha 'roleName'
+
+          this.router.navigate(['/user-dashboard']);
+
+        }
+
+      }
+
     },
+
     error: (err) => {
 
-      // ❌ FAILURE
-      alert('Login failed. Invalid username or password');
+      alert("Invalid Username or Password");
+
     }
+
   });
+
 }
-
-
 loginByPhone()
 {
 

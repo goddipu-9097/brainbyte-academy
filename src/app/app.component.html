@@ -1,5 +1,21 @@
- <app-header></app-header>  <!--this is degine show serial wise 1.header .2 all body 3. header -->
-<app-breadcrumb></app-breadcrumb>
- <router-outlet></router-outlet> <!-- 1 clear all and write this command -->
 
- <app-footer></app-footer>
+
+<!-- <app-header></app-header>   -->
+ <!--1.this is degine show serial wise 1.header .2 all body 3. header -->
+<!-- <app-breadcrumb></app-breadcrumb> -->
+<!-- <div class="container-fluid page-body-wrapper"></div> -->
+ <!-- <router-outlet></router-outlet> 1 clear all and write this command -->
+
+ <!-- <app-footer></app-footer> -->
+   
+     <!-- 2.this condion is use when we want header for dashboard and different header for admin -->
+
+ <!-- WEBSITE HEADER -->
+<app-header *ngIf="!isAdminPage"></app-header>
+
+<!-- ROUTE PAGE -->
+<app-breadcrumb *ngIf="!isAdminPage"></app-breadcrumb>
+<router-outlet></router-outlet>
+
+<!-- WEBSITE FOOTER -->
+<app-footer *ngIf="!isAdminPage"></app-footer>

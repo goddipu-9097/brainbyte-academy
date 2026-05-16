@@ -2,9 +2,9 @@
 	 CSS
 =================================*/
 
-.courses {
+/* .courses {
 	background: #f8f8f8;
-}
+} */
 .courses .course-sliderCourses {
 	margin-top: 30px;
 }
@@ -24,9 +24,14 @@
 }
 .courses .course-head{
 	position:relative;
-	overflow:hidden;
+	/* overflow:hidden; */
+	 height: 200px;   /* FIX HEIGHT */
 
 }
+/* .courses .course-head {
+    height: 220px;
+    border-radius: 10px;
+} */
 
 .courses .course-head::before {
 	content: "";
@@ -175,59 +180,6 @@
     border-right: 8px solid transparent;
 }
 
-/* (hover pe name show + rotate) end */
-/* .courses .name-price .teacher-info {
-	display: inline-block;
-} */
-/* .courses .teacher-info img {
-	width: 60px;
-	height: 60px;
-	line-height: 60px;
-	border-radius: 100%;
-	display: inline-block;
-	border: 4px solid #fff;
-	
-	-webkit-box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.15);
-	-moz-box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.15);
-	box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.15);
-} */
-/* .courses .single-course .teacher-info:hover img{
-	-webkit-transform:rotate(360deg);
-	-moz-transform:rotate(360deg);
-	transform:rotate(360deg);
-}
-.courses .teacher-info .title {
-	font-weight: 500;
-	padding: 10px;
-	color: #fff;
-	border-radius: 30px;
-	position: absolute;
-	left: 0;
-	bottom: -43px;
-	z-index: 33;
-	font-size: 13px;
-	-webkit-transform:translateX(-30px);
-	-moz-transform:translateX(-30px);
-	transform:translateX(-30px);
-	opacity:0;
-	visibility:hidden;
-	-webkit-transition: all 0.3s ease 0s;
-	-moz-transition: all 0.3s ease 0s;
-	transition: all 0.3s ease 0s;
-}
-.courses .teacher-info:hover .title{
-	transform:translateX(0px);
-	opacity:1;
-	visibility:visible;
-}
-.courses .teacher-info .title::before {
-	content: "";
-	border-bottom: 12px solid;
-	border-right: 10px solid transparent;
-	border-left: 10px solid transparent;
-	position: absolute;
-	top: -10px;
-} */
 /* Price */
 .courses .price {
 	color: #fff;
@@ -276,7 +228,7 @@
 .courses .course-meta {
 	background: #fff;
 	border-top: 1px solid rgba(204, 204, 204, 0.45);
-	overflow: hidden;
+	/* overflow: hidden; */
 	margin: 15px;
 	text-align: left;
 	padding-top: 15px;
@@ -355,6 +307,150 @@
 .courses.archive .single-course {
 	margin: 30px 0 0;
 }
+
 /*===============================
 	End Courses CSS
 =================================*/
+
+.course-wrapper {
+    display: flex;
+     gap: 30px; /*not use */
+    align-items: flex-start; /*not use */
+	    height: 140vh;   /* 👈 required for vertical scroll */
+    overflow: hidden;     /* prevent full scroll */
+}
+/* .course-wrapper {
+    display: flex;
+    height: 600px;        
+    overflow: hidden;     
+} */
+
+/* RIGHT SIDE SCROLL */
+.right-clm {
+    flex: 1;
+    height: 100%;        /* 👈 important */
+    overflow-y: auto;    /* 👈 vertical scroll */
+    overflow-x: hidden;  /* 👈 avoid horizontal scroll */
+    padding-right: 10px;
+}
+
+/* LEFT */
+/* .left-clm {
+    width: 260px;   
+    flex-shrink: 0;
+	margin-block: auto; 
+	
+} */
+.left-clm {
+    width: 260px;
+    position: sticky;
+    top: 20px;     /* stick from top */
+    height: fit-content;
+}
+
+/* RIGHT */
+
+.right-clm .row {
+    row-gap: 25px;
+}
+.left-clm .list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.left-clm button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background: #f5f5f5;
+    text-align: left;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+.left-clm button:hover {
+    background: #06BBCC;
+    color: #fff;
+    transform: translateX(5px);
+}
+
+.left-clm button.active {
+    background: #06BBCC;
+    color: #fff;
+}
+
+
+
+
+
+/* container */
+
+.container {
+    background: #e4f0ff;
+}
+ .container/*,
+.container-fluid,
+.container-sm,
+.container-md,
+.container-lg,
+.container-xl */{ 
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  /* margin-right: auto;
+  margin-left: auto; */
+}
+
+
+/* responsive */
+
+@media (max-width: 992px) {
+    .course-wrapper {
+        flex-direction: column;
+    }
+
+    .left-clm {
+        width: 100%;
+    }
+
+    .left-clm .list {
+        flex-direction: row;
+        overflow-x: auto;
+    }
+
+    .left-clm button {
+        white-space: nowrap;
+    }
+}
+
+
+
+
+
+/* new add for latest */
+.course-wrapper {
+  display: flex;
+}
+
+.left-clm {
+  width: 250px;
+}
+
+.right-clm {
+  flex: 1;
+  max-height: 600px;
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+.list button {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.list button.active {
+  background-color: #007bff;
+  color: #fff;
+}
